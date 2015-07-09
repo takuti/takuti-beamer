@@ -1,0 +1,96 @@
+\documentclass[xcolor=dvipsnames,10pt,dvipdfmx]{beamer}
+
+% Beamer basic setting
+\usetheme[height=0mm]{Rochester}
+
+% Fonts
+\usepackage{txfonts}
+\usepackage[deluxe,expert]{otf}
+\renewcommand{\familydefault}{\sfdefault} % English
+\renewcommand{\kanjifamilydefault}{\gtdefault} % Japanese
+
+% Define colors
+\definecolor{Tungsten}{RGB}{51,51,51}
+\setbeamercolor{normal text}{fg=Tungsten}
+\definecolor{Base}{HTML}{0086AB}
+\definecolor{Sub}{HTML}{C7243A}
+\definecolor{SubThin}{HTML}{F6D4D8}
+\usecolortheme[named=Base]{structure}
+\setbeamercolor{alerted text}{fg=Sub,bg=SubThin}
+\newcommand{\boxalert}[1]{{%
+  \usebeamercolor{alerted text}\colorbox{bg}{\alert{#1}}%
+}}
+
+\useinnertheme{circles}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{frametitle}[default][center]
+\setbeamertemplate{footline}[frame number]
+\setbeamerfont{frametitle}{size=\normalsize}
+\setbeamersize{text margin left=2zw, text margin right=2zw}
+\setbeamertemplate{blocks}[rounded]
+
+% Table of contents slide for head of all sections
+\AtBeginSection[]{
+    \frame[plain]{\tableofcontents[currentsection, hideallsubsections]}
+}
+
+% Other packages
+\usepackage{graphicx}
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}
+\renewcommand{\algorithmicensure}{\textbf{Output:}}
+%
+\title{Hello　\ こんにちは}
+\subtitle{This is a subtitle \ これはサブタイトルです}
+\institute{The University of XX \ XX大学}
+\author{takuti \ たくち}
+\date{\today}
+%
+
+\begin{document}
+
+\begin{frame}[plain]
+  \titlepage
+\end{frame}
+
+\begin{frame}{Before Beginning}
+  \begin{enumerate}
+    \item Numbered item 1
+    \item Numbered item 2
+    \item Numbered item 3
+  \end{enumerate}
+  A word is \alert{alerted}. And, this one is a \boxalert{alerted box}.
+\end{frame}
+
+% all sections ("today's outline")
+\frame[plain]{\tableofcontents[hideallsubsections]}
+
+\section{Introduction}
+\begin{frame}{Background}
+  \begin{itemize}
+    \item Item
+    \item $y = f(x) = x^2$
+    \item $\textrm{svd}(A) = U_kS_kV_k^T$
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Related Work}
+こんな方程式があります。
+\[
+  i\hbar\frac{\partial\psi}{\partial t}
+  = -\frac{\hbar^2}{2m}\frac{\partial^2\psi}{\partial x^2}+V(x,t)\psi
+\]
+\end{frame}
+
+\section{Experimental Results}
+\begin{frame}{Experiment 1: \\ Something New}
+  \begin{block}{block}
+    This is a block.
+  \end{block}
+  \begin{exampleblock}{example block}
+    This is an example block.
+  \end{exampleblock}
+\end{frame}
+
+\end{document}
