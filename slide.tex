@@ -12,7 +12,7 @@
 % Define colors
 \definecolor{Tungsten}{RGB}{51,51,51}
 \setbeamercolor{normal text}{fg=Tungsten}
-\definecolor{Base}{HTML}{007AB7}
+\definecolor{Base}{HTML}{00496E}
 \definecolor{Sub}{HTML}{C7243A}
 \definecolor{SubThin}{HTML}{F6D4D8}
 \usecolortheme[named=Base]{structure}
@@ -23,7 +23,7 @@
 
 \useinnertheme{circles}
 \setbeamertemplate{navigation symbols}{}
-\setbeamertemplate{frametitle}[default][center]
+\setbeamertemplate{frametitle}[default][left]
 \setbeamertemplate{footline}[frame number]
 \setbeamerfont{frametitle}{size=\normalsize}
 \setbeamersize{text margin left=2zw, text margin right=2zw}
@@ -32,6 +32,22 @@
 % Table of contents slide for head of all sections
 \AtBeginSection[]{
     \frame[plain]{\tableofcontents[currentsection, hideallsubsections]}
+}
+
+\setbeamercolor{title}{fg=Base}
+\setbeamercolor{subtitle}{fg=Base}
+\setbeamertemplate{title page}{
+    \vspace{2.5em}
+    {\usebeamerfont{title} \usebeamercolor[fg]{title} \inserttitle \par}
+    \vspace{.5em}
+    {\usebeamerfont{subtitle} \usebeamercolor[fg]{subtitle} \insertsubtitle \par}
+    \vspace{3.0em}
+    \usebeamerfont{author}\insertauthor\par
+    \vspace{.5em}
+    \usebeamerfont{institute}\insertinstitute \par
+    \vspace{3.0em}
+    \usebeamerfont{date}\insertdate\par
+    \usebeamercolor[fg]{titlegraphic}\inserttitlegraphic
 }
 
 % Other packages
